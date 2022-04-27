@@ -68,3 +68,39 @@ class TweetDfExtractor:
         for x in self.tweets_list:
             source.append(x['source'])
         return source
+    def find_screen_name(self) -> list:
+        screen_name = []
+        for x in self.tweets_list:
+            screen_name.append(x['user']['screen_name'])
+        return screen_name
+
+    def find_followers_count(self) -> list:
+        followers_count = []
+        for x in self.tweets_list:
+            followers_count.append(x['user']['followers_count'])
+        return followers_count
+
+    def find_friends_count(self) -> list:
+        friends_count = []
+        for x in self.tweets_list:
+            friends_count.append(x['user']['friends_count'])
+        return friends_count
+
+    def is_sensitive(self) -> list:
+        is_sensitive = []
+        for tweet in self.tweets_list:
+            if 'possibly_sensitive' in tweet.keys():
+                is_sensitive.append(tweet['possibly_sensitive'])
+            else:
+                is_sensitive.append(None)
+        return is_sensitive
+
+    def find_favourite_count(self) -> list:
+        favorite_count = []
+        for tweet in self.tweets_list:
+            if 'favourites_count' in tweet.keys():
+                favorite_count.append(
+                    tweet['favourites_count'])
+            else:
+                favorite_count.append(0)
+        return favorite_count
