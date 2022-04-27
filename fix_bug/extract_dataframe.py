@@ -201,7 +201,7 @@ class TweetDfExtractor:
             print('File Successfully Saved.!!!')
         return df
         if __name__ == "__main__":
-    columns = ['created_at', 'source', 'original_text', 'clean_text', 'sentiment', 'polarity', 'subjectivity', 'lang', 'favorite_count', 'retweet_count',
+            columns = ['created_at', 'source', 'original_text', 'clean_text', 'sentiment', 'polarity', 'subjectivity', 'lang', 'favorite_count', 'retweet_count',
                'original_author', 'screen_count', 'followers_count', 'friends_count', 'possibly_sensitive', 'hashtags', 'user_mentions', 'place', 'place_coord_boundaries']
 
     _, tweet_list = read_json("data/Economic_Twitter_Data.zip")
